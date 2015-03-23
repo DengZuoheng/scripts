@@ -2,8 +2,8 @@
 // @name         jnu study auto login
 // @namespace    http://dengzuoheng.github.io
 // @version      0.1
-// @description  enter something useful
-// @author       You
+// @description  其实就是study平台一个自动登录的玩意
+// @author       dengzuoheng
 // @match        http://study.jnu.edu.cn/
 // @grant        none
 // @run-at       document-end
