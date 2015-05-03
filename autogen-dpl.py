@@ -20,7 +20,7 @@ begin = random.randint(0,len(music))
 playlist_file.write('playname=%s\n'%os.path.join(os.getcwd(),music[begin]))
 playlist_file.write('%d\n'%begin)
 playlist_file.write('topindex=0\n')
-i = 0
+i = 1
 for item in music:
     playlist_file.write('%d*file*%s\n'%(i,item))
     playlist_file.write('%d*played*0\n'%i)
