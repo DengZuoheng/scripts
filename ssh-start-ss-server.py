@@ -2,9 +2,9 @@
 # -*- coding: utf-8 -*-
 import paramiko
 login_info = {
-    'hostname' = '116.251.218.79'
-    'username' = 'root'
-    'password' = '299792458'
+    'hostname':'116.251.218.79',
+    'username':'root',
+    'password':'ainsophaur000',
 }
 cmd = 'python scripts/start-ss-server.py'
 ssh_client =paramiko.SSHClient()
