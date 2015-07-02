@@ -30,7 +30,8 @@ for item in filename_list:
     try:
         new_name = ''.join([crc32,'.',extension])
         os.rename(item, new_name)
-        log_str = '%s >>> %s'%(old_name,new_name)
+        #log_str = '%s >>> %s'%(old_name,new_name)
+        log_str = {'%s'%old_name:'%s'%new_name}
         log.append(log_str)
         print(log_str)
     except:
