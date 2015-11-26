@@ -5,7 +5,7 @@ def insert_line(filepath,line_num,new_text):
     f = open(filepath, 'r')
     s = f.read()
     f.close()
-    l = s.splitlines();
+    l = s.splitlines()
     l.insert(line_num, new_text)
     s = '\n'.join(l)
     f = open(filepath, 'w')
@@ -16,7 +16,7 @@ def change_line(filepath,line_num,new_text):
     f = open(filepath, 'r')
     s = f.read()
     f.close()
-    l = s.splitlines();
+    l = s.splitlines()
     l[line_num]=new_text
     s = '\n'.join(l)
     f = open(filepath, 'w')
