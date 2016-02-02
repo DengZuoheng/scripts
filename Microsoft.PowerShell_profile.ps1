@@ -24,7 +24,7 @@ Function ping_github {
     if($args){
         ping github.com $args
     }else{
-        ping github.com -n
+        ping github.com -n 10
     }
     
 }
