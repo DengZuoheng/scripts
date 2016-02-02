@@ -1,0 +1,1 @@
+ping github.com $args

@@ -1,2 +1,2 @@
-ping github.com -t
+powershell -File ping-github.ps1
 @pause

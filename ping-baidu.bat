@@ -1,2 +1,2 @@
-ping www.baidu.com -t
+powershell -File ping-baidu.ps1
 @pause
