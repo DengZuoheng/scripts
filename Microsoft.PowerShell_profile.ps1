@@ -10,6 +10,15 @@ Function update_profile {
 Function desktop{ cd c:\Users\Administrator\Desktop\ ; }
 Function project{ cd c:\Projects\ ;}
 
+function prompt  
+{  
+    $my_path = $(get-location).toString()  
+    Write-Host ("PS ") -nonewline -foregroundcolor 'Green'
+    Write-Host ($my_path) -nonewline -foregroundcolor 'Green' 
+    Write-Host (">") -nonewline -foregroundcolor 'Green'  
+    return " "  
+}  
+
 #shortcuts
 
 Function ping_baidu {
@@ -35,22 +44,36 @@ $github_path = "C:\Users\Administrator\AppData\Local\GitHub\GitHub.appref-ms"
 $wechat_path = "C:\Program Files (x86)\Tencent\WeChat\WeChat.exe"
 $firefox_path = "C:\Program Files\Mozilla Firefox\firefox.exe"
 $youdao_path = "C:\Users\Administrator\AppData\Local\Youdao\Dict\Application\YodaoDict.exe"
-
+$pycharm_path = "C:\Program Files (x86)\JetBrains\PyCharm Community Edition 5.0.4\bin\pycharm.exe"
 $ss_local_dir = "C:\Portable Application\Shadowsocks-win\"
 $ss_local_path = "$ss_local_dir\Shadowsocks.exe"
 $ss_local_config = "$ss_local_dir\gui-config.json"
 $iss_reconfig_script = "$script_path\iss_reconfig.py"
+$thunder_path = "C:\Program Files (x86)\Thunder Network\Thunder\Program\Thunder.exe"
+
+Function pycharm{
+    If($args){
+        Start-Process -FilePath $pycharm_path -WindowStyle Maximized -ArgumentList "$args"
+    }else{
+        Start-Process -FilePath $pycharm_path -WindowStyle Maximized
+    }
+}
 
 Function sublime{   
     If($args){
-        Start-Process -FilePath $sublime_path -ArgumentList "$args"
+        Start-Process -FilePath $sublime_path -WindowStyle Maximized -ArgumentList "$args"
     }else{
-        Start-Process -FilePath $sublime_path
+        Start-Process -FilePath $sublime_path -WindowStyle Maximized
     }
 }
 
 Function music{
-    o:\Audio\Inventory\0-playlist.dpl
+    If($args){
+        ."o:\Audio\Inventory\$args-playlist.dpl"
+    }else{
+        o:\Audio\Inventory\$args-playlist.dpl
+    }
+    
 }
 
 Function ss_local{
@@ -74,7 +97,20 @@ Function github{ Start-Process -FilePath $github_path ;}
 
 Function wechat{ Start-Process -FilePath $wechat_path ;}
 
-Function firefox{ Start-Process -FilePath $firefox_path ;}
+Function firefox{ Start-Process -FilePath $firefox_path -WindowStyle maximized ;}
 
 Function youdao{ Start-Process -FilePath $youdao_path ;}
+
+Function fanyi {
+    python "$script_path\stable\fanyi.py" $args
+}
+
+Function xunlei {
+    Start-Process -FilePath $thunder_path
+}
+
+Function thunder {
+    xunlei
+}
+
 
